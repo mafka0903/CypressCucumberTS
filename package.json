@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4"
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+    "@faker-js/faker": "^9.6.0"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
@@ -19,5 +20,8 @@
       "cypress/e2e/[filepath].{js,ts}",
       "cypress/support/step_definitions/**/*.{js,ts}"
     ]
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
   }
 }

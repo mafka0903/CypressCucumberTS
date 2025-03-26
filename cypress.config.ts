@@ -4,8 +4,10 @@ import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-prepro
 import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
 
 export default defineConfig({
-  projectId: '2ka94p',
+  projectId: "2ka94p",
   e2e: {
+    viewportWidth: 1920,
+    viewportHeight: 1080,
     specPattern: "**/*.feature",
     async setupNodeEvents(
       on: Cypress.PluginEvents,
@@ -25,5 +27,6 @@ export default defineConfig({
       filterSpecs: true,
     },
     baseUrl: "https://telnyx.com",
+    //pageLoadTimeout: 15000,
   },
 });
