@@ -2,6 +2,8 @@ import { When, Then, Given } from "@badeball/cypress-cucumber-preprocessor";
 import homePage from "../../pages/homePage";
 import contactUsPage from "../../pages/contactUsPage";
 import pricingPage from "../../pages/pricingPage";
+import solutionsPage from "../../pages/solutionsPage";
+import { testData } from "../../fixtures/data.fixtures";
 
 Given("The user opens the Telnyx home page", function () {
   cy.visit("/");
@@ -270,3 +272,96 @@ Then(
       .and("have.attr", "target", "_blank");
   }
 );
+
+//9
+
+When("User click to the Solutions on the main menu", function () {
+  homePage.clickSolutions();
+});
+
+When("User click See all solutions on the dropdown menu", function () {
+  homePage.clickSeeAllSolotions();
+});
+
+When("User click See use cases on the dropdown menu", function () {
+  solutionsPage.clickSeeUseCases();
+});
+
+When("User click Filter by", function () {
+  solutionsPage.clickFilterBy();
+});
+
+When("User check the first two selections", function () {
+  solutionsPage.clickCheckboxFilterByFirst();
+  solutionsPage.clickCheckboxFilterBySecond();
+});
+
+Then("Filter by fied displayed two filters selected", function () {
+  solutionsPage.elements
+    .filterBy()
+    .should("contain.text", testData.ExpectedText.filterByText);
+});
+
+//10
+
+When("User ckick to the Why Telnyx on the main menu", function () {
+  homePage.clickWhyTelnyx();
+});
+
+Then(
+  "The are four transition options are available in opened dpropdown menu",
+  function () {
+    homePage.elements.dropdownWhyTelnyx().should("have.length", 4);
+  }
+);
+
+//11
+
+When("Click to the Sing up in the upper right corner of the page", function () {
+  homePage.clickSingUpButton();
+});
+
+Then("The sing up menu is displayed", function () {
+  homePage.elements.createAccountForm().should("be.visible");
+});
+
+//12
+
+When("User scroll to Receive a call from Telnyx form", function () {
+  homePage.elements.receiveCallForm().scrollIntoView();
+});
+
+When(
+  "User fill the Mobile phone field {string}",
+  function (phoneNumberReceiveCallForm: string) {
+    homePage.typePhoneNumberReceiveCallForm(phoneNumberReceiveCallForm);
+  }
+);
+
+When("Click Build my voice bot button", function () {
+  homePage.clickBuildMyVoiceBotButton();
+});
+
+Then("The message about ancorrect entered the field is displayed", function () {
+  homePage.elements.messageErorFillReceiveCallForm().should("be.visible");
+});
+
+//13
+
+When(
+  "User click to the Ask our AI assistant icon in the lower  corner of the page",
+  function () {
+    homePage.clickAsistantAI();
+  }
+);
+
+When(
+  "User fill the Type your qestion here field {string}",
+  function (questionField: string) {
+    homePage.typeOnQuestionField(questionField);
+  }
+);
+
+Then("The Button send the question is active", function () {
+  homePage.elements.sendQestionButton().should("not.be.disabled");
+});

@@ -20,6 +20,7 @@ export const testData = {
 
   ExpectedText: {
     upperText: "Experience AI-powered connectivity",
+    filterByText: "2 filters selected",
   },
 };
 
