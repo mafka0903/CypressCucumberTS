@@ -6,7 +6,9 @@ import { allureCypress } from "allure-cypress/reporter";
 
 export default defineConfig({
   projectId: "2ka94p",
+  video: false,
   e2e: {
+    retries: 3,
     viewportWidth: 1920,
     viewportHeight: 1080,
     specPattern: "**/*.feature",
