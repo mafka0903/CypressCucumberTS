@@ -1,9 +1,8 @@
 import { When, Then, Given } from "@badeball/cypress-cucumber-preprocessor";
-import { testData, urls } from "../../fixtures/data.fixtures";
 import shopPage from "../../pages/shopPage";
 
-Given("The user is on the shop page", function () {
-  cy.visit(urls.shopPage);
+Given("The user is on the shop page {string}", function (url: string) {
+  cy.visit(url);
 });
 
 When("The user clicks on the search icon", function () {
@@ -14,8 +13,8 @@ When("Waits for the search field to load", function () {
   cy.wait(5000);
 });
 
-When("Enters a search term", function () {
-  shopPage.typeSearchField();
+When("User type on the search field {string}", function (productName: string) {
+  shopPage.typeSearchField(productName);
 });
 
 When("Clicks the search button", function () {
@@ -23,15 +22,11 @@ When("Clicks the search button", function () {
 });
 
 Then(
-  "The product results should contain the expected product name",
-  function () {
-    shopPage.elements
-      .productNameCard()
-      .should("contain.text", testData.Products.telnyxHat);
+  "The product results should contain the expected product name {string}",
+  function (productName: string) {
+    shopPage.elements.productNameCard().should("contain.text", productName);
   }
 );
-
-//2
 
 When("The user clicks on the shop header menu", function () {
   shopPage.clickHeaderMenuShop();

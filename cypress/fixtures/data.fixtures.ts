@@ -10,24 +10,4 @@ export const testData = {
     requestDescribe: faker.string.sample(),
     howHearAbout: faker.string.sample(),
   },
-  Dropdown: {
-    reasonForContact: "Support",
-    phoneCode: "United Kingdom (+44)",
-  },
-  Products: {
-    telnyxHat: "Telnyx Classic Hat",
-  },
-
-  ExpectedText: {
-    upperText: "Experience AI-powered connectivity",
-    filterByText: "2 filters selected",
-  },
-};
-
-export const urls = {
-  pricingPage: "https://telnyx.com/pricing",
-  shopPage: "https://shop.telnyx.com",
-  linkedinTelnyx: "https://www.linkedin.com/company/telnyx/",
-  twitterTelnyx: "https://twitter.com/telnyx",
-  facebookTelnyx: "https://www.facebook.com/Telnyx/",
 };

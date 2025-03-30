@@ -1,5 +1,3 @@
-import { testData } from "../fixtures/data.fixtures";
-
 class pricingPage {
   elements = {
     communications: () => cy.get(".c-PJLV.c-ihLeEO.c-PJLV-cHtIMp-dark-false"),

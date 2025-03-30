@@ -1,13 +1,6 @@
-import { When, Then, Given } from "@badeball/cypress-cucumber-preprocessor";
+import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import homePage from "../../pages/homePage";
 import solutionsPage from "../../pages/solutionsPage";
-import { testData } from "../../fixtures/data.fixtures";
-
-// Given("The user opens the Telnyx home page", function () {
-//   cy.visit("/");
-// });
-
-//9
 
 When("User click to the Solutions on the main menu", function () {
   homePage.clickSolutions();
@@ -30,8 +23,6 @@ When("User check the first two selections", function () {
   solutionsPage.clickCheckboxFilterBySecond();
 });
 
-Then("Filter by fied displayed two filters selected", function () {
-  solutionsPage.elements
-    .filterBy()
-    .should("contain.text", testData.ExpectedText.filterByText);
+Then("Filter by fied displayed {string}", function (filters: string) {
+  solutionsPage.elements.filterBy().should("contain.text", filters);
 });

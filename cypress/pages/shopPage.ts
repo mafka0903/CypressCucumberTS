@@ -1,5 +1,3 @@
-import { testData } from "../fixtures/data.fixtures";
-
 class shopPage {
   elements = {
     searchIcon: () => cy.get(".header__search"),
@@ -18,8 +16,8 @@ class shopPage {
     this.elements.searchIcon().click();
   }
 
-  typeSearchField() {
-    this.elements.searchField().type(testData.Products.telnyxHat);
+  typeSearchField(productName: string) {
+    this.elements.searchField().type(productName);
   }
 
   clickSearchFieldButton() {

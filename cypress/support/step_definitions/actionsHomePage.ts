@@ -5,7 +5,6 @@ Given("The user opens the Telnyx home page", function () {
   cy.visit("/");
 });
 
-//1
 When("The page loads completely", function () {
   cy.wait(16000);
 });
@@ -18,21 +17,20 @@ Then(
     homePage.elements.expiriensAI().should("have.text", string);
   }
 );
-//2
+
 When("User click the Products", function () {
   homePage.clickProducts();
 });
 Then("The main menu should be visible", function () {
-  homePage.elements.dropdownProducts().should("be.visible");
+  homePage.elements.dropdownProducts().should("exist").should("be.visible");
 });
-
-//7
 
 When("The Telnyx main page loads completely", function () {
   homePage.elements
     .headerOptions()
     .should("exist")
     .should("be.visible", { timeout: 15000 });
+  cy.wait(5000);
 });
 
 Then(
@@ -46,9 +44,7 @@ Then(
   }
 );
 
-//8
-
-When("QScroll to the bottom of the page", function () {
+When("Scroll to the bottom of the home page", function () {
   cy.scrollTo("bottom", { ensureScrollable: false, duration: 1000 });
   homePage.elements
     .footerSocial()
@@ -89,8 +85,6 @@ Then(
   }
 );
 
-//10
-
 When("User ckick to the Why Telnyx on the main menu", function () {
   homePage.clickWhyTelnyx();
 });
@@ -98,11 +92,10 @@ When("User ckick to the Why Telnyx on the main menu", function () {
 Then(
   "The are four transition options are available in opened dpropdown menu",
   function () {
+    cy.wait(5000);
     homePage.elements.dropdownWhyTelnyx().should("have.length", 4);
   }
 );
-
-//11
 
 When("Click to the Sing up in the upper right corner of the page", function () {
   homePage.clickSingUpButton();
@@ -111,8 +104,6 @@ When("Click to the Sing up in the upper right corner of the page", function () {
 Then("The sing up menu is displayed", function () {
   homePage.elements.createAccountForm().should("be.visible");
 });
-
-//12
 
 When("User scroll to Receive a call from Telnyx form", function () {
   homePage.elements.receiveCallForm().scrollIntoView();
@@ -132,8 +123,6 @@ When("Click Build my voice bot button", function () {
 Then("The message about ancorrect entered the field is displayed", function () {
   homePage.elements.messageErorFillReceiveCallForm().should("be.visible");
 });
-
-//13
 
 When(
   "User click to the Ask our AI assistant icon in the lower  corner of the page",

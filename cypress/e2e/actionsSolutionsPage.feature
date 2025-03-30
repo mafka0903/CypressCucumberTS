@@ -9,4 +9,4 @@ Feature: Solutions Page Actions
     And User click See use cases on the dropdown menu
     And User click Filter by
     And User check the first two selections
-    Then Filter by fied displayed two filters selected
+    Then Filter by fied displayed "2 filters selected"

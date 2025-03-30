@@ -1,14 +1,14 @@
 Feature: Shop Page Actions
 
 Background:
-Given The user is on the shop page
+Given The user is on the shop page "https://shop.telnyx.com"
 
 Scenario: Checking the search function
     When The user clicks on the search icon
     And Waits for the search field to load
-    And Enters a search term
+    And User type on the search field "Telnyx Classic Hat"
     And Clicks the search button
-    Then The product results should contain the expected product name
+    Then The product results should contain the expected product name "Telnyx Classic Hat"
 
 Scenario: Checking that user has the ability to add a product to the cart
     When The user clicks on the shop header menu

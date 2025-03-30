@@ -17,7 +17,7 @@ Scenario: Check that user navigate to a different domain page when clicking Shop
     Then The link of Shop button should have an "https://shop.telnyx.com" attribute pointing to the shop page
 
 Scenario: Checking that  Footer Links will redirect to the correct pages
-    When QScroll to the bottom of the page
+    When Scroll to the bottom of the home page
     Then The link of Linkedin button should have an "https://www.linkedin.com/company/telnyx/" attribute pointing to the shop page
     Then The link of Twitter button should have an "https://twitter.com/telnyx" attribute pointing to the shop page
     Then The link of Facebook button should have an "https://www.facebook.com/Telnyx/" attribute pointing to the shop page

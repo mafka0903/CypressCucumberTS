@@ -1,12 +1,8 @@
-import { When, Then, Given } from "@badeball/cypress-cucumber-preprocessor";
+import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import homePage from "../../pages/homePage";
 import pricingPage from "../../pages/pricingPage";
+import { testData } from "../../fixtures/data.fixtures";
 
-// Given("The user opens the Telnyx home page", function () {
-//   cy.visit("/");
-// });
-
-//3
 When("User click the Pricing", function () {
   homePage.clickPricing();
 });
@@ -15,8 +11,6 @@ Then("Should be open page {string}", function (string) {
     expect(location.href).to.eq(string);
   });
 });
-
-// 6
 
 When("User click the Pricing on main menu", function () {
   homePage.clickPricing();
@@ -28,24 +22,27 @@ When("User click the MessagingAPI on Communications field", function () {
 
 When("Scroll to the bottom of the page", function () {
   cy.scrollTo("bottom");
-  pricingPage.elements
-    .downloadFirstName()
-    .should("exist")
-    .should("be.visible", { timeout: 15000 });
-});
-
-When("User type in First Name {string}", function (downloadFirstName: string) {
-  pricingPage.typeDownloadFirstName(downloadFirstName);
-});
-
-When("User type in Last Name {string}", function (downloadLastName: string) {
-  pricingPage.typeDownloadLastName(downloadLastName);
+  cy.wait(5000);
 });
 
 When(
-  "User type in Business Email {string}",
-  function (downloadBussinessEmail: string) {
-    pricingPage.typeDownloadBussinessEmail(downloadBussinessEmail);
+  "User on the pricing page type in First name generaitig data",
+  function () {
+    pricingPage.typeDownloadFirstName(testData.DataForContactUs.firstName);
+    cy.wait(5000);
+  }
+);
+
+When("User on the pricing page type in Last Name generaitig data", function () {
+  pricingPage.typeDownloadLastName(testData.DataForContactUs.lastName);
+});
+
+When(
+  "User on the pricing page type in Business Email generaitig email",
+  function () {
+    pricingPage.typeDownloadBussinessEmail(
+      testData.DataForContactUs.businessEmail
+    );
   }
 );
 

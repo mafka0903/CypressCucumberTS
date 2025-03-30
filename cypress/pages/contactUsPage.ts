@@ -1,5 +1,3 @@
-import { testData } from "../fixtures/data.fixtures";
-
 class contactUsPage {
   elements = {
     reasonForContact: () =>
@@ -17,8 +15,8 @@ class contactUsPage {
     submitButton: () => cy.get('button[type="submit"]'),
   };
 
-  selectSalesInquiry() {
-    this.elements.reasonForContact().select(testData.Dropdown.reasonForContact);
+  selectSalesInquiry(support: string) {
+    this.elements.reasonForContact().select(support);
   }
 
   typeFirstName(firstName: string) {
@@ -33,8 +31,8 @@ class contactUsPage {
     this.elements.businessEmail().type(businessEmail);
   }
 
-  selectCountry() {
-    this.elements.phoneCode().select(testData.Dropdown.phoneCode);
+  selectCountry(country: string) {
+    this.elements.phoneCode().select(country);
   }
 
   typePhoneNumber(phoneNumber: string) {

@@ -11,8 +11,8 @@ Feature: Pricing Page Actions
     When User click the Pricing on main menu
     And User click the MessagingAPI on Communications field
     And Scroll to the bottom of the page
-    And User type in First Name "Anna"
-    And User type in Last Name "Smith"
-    And User type in Business Email "annsmith@gmail.com"
+    And User on the pricing page type in First name generaitig data
+    And User on the pricing page type in Last Name generaitig data
+    And User on the pricing page type in Business Email generaitig email
     And Click the Submit button
     Then Should be visible message about successfuly download pricing
