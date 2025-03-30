@@ -22,7 +22,6 @@ Scenario: Checking that  Footer Links will redirect to the correct pages
     Then The link of Twitter button should have an "https://twitter.com/telnyx" attribute pointing to the shop page
     Then The link of Facebook button should have an "https://www.facebook.com/Telnyx/" attribute pointing to the shop page
     
-
  Scenario: Check that drobdown of Why Telnyx in the main menu is full
     When User ckick to the Why Telnyx on the main menu
     Then The are four transition options are available in opened dpropdown menu

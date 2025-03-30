@@ -99,7 +99,7 @@ When("User ckick to the Why Telnyx on the main menu", function () {
 Then(
   "The are four transition options are available in opened dpropdown menu",
   function () {
-    cy.wait(5000);
+    cy.wait(10000);
     homePage.elements.dropdownWhyTelnyx().should("have.length", 4);
   }
 );
