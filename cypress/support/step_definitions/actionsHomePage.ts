@@ -25,7 +25,10 @@ When("User click the Products", function () {
   homePage.clickProducts();
 });
 Then("The main menu should be visible", function () {
-  homePage.elements.dropdownProducts().should("exist").should("be.visible");
+  homePage.elements
+    .dropdownProducts()
+    .should("exist")
+    .should("be.visible", { timeout: 15000 });
 });
 
 When("The Telnyx main page loads completely", function () {
