@@ -53,6 +53,7 @@ When("Scroll to the bottom of the home page", function () {
     .footerSocial()
     .should("exist")
     .should("be.visible", { timeout: 15000 });
+  cy.wait(5000);
 });
 
 Then(
