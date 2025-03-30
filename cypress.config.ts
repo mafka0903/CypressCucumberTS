@@ -33,5 +33,6 @@ export default defineConfig({
     },
     baseUrl: "https://telnyx.com",
     pageLoadTimeout: 6000,
+    defaultCommandTimeout: 10000,
   },
 });
