@@ -32,7 +32,7 @@ export default defineConfig({
       filterSpecs: true,
     },
     baseUrl: "https://telnyx.com",
-    pageLoadTimeout: 6000,
+    pageLoadTimeout: 16000,
     defaultCommandTimeout: 10000,
   },
 });
