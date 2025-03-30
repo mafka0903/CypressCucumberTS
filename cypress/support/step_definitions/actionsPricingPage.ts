@@ -22,7 +22,7 @@ When("User click the MessagingAPI on Communications field", function () {
 
 When("Scroll to the bottom of the page", function () {
   cy.scrollTo("bottom");
-  cy.wait(5000);
+  cy.wait(10000);
 });
 
 When(
