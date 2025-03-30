@@ -49,11 +49,11 @@ Then(
 
 When("Scroll to the bottom of the home page", function () {
   cy.scrollTo("bottom", { ensureScrollable: false, duration: 1000 });
+  cy.wait(6000);
   homePage.elements
     .footerSocial()
     .should("exist")
     .should("be.visible", { timeout: 15000 });
-  cy.wait(5000);
 });
 
 Then(

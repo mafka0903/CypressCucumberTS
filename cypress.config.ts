@@ -32,6 +32,6 @@ export default defineConfig({
       filterSpecs: true,
     },
     baseUrl: "https://telnyx.com",
-    //pageLoadTimeout: 15000,
+    pageLoadTimeout: 6000,
   },
 });
