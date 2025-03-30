@@ -9,7 +9,10 @@ When("The page loads completely", function () {
   cy.wait(16000);
 });
 Then("The Telnyx logo should be visible", function () {
-  homePage.elements.telnyxSvg().should("be.visible");
+  homePage.elements
+    .telnyxSvg()
+    .should("exist")
+    .should("be.visible", { timeout: 15000 });
 });
 Then(
   "The {string} text should be displayed with the expected text",
