@@ -2,6 +2,7 @@ import { defineConfig } from "cypress";
 import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
 import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
+import { allureCypress } from "allure-cypress/reporter";
 
 export default defineConfig({
   projectId: "2ka94p",
@@ -14,12 +15,16 @@ export default defineConfig({
       config: Cypress.PluginConfigOptions
     ): Promise<Cypress.PluginConfigOptions> {
       await addCucumberPreprocessorPlugin(on, config);
+      allureCypress(on, config, {
+        resultsDir: "allure-results",
+      });
       on(
         "file:preprocessor",
         createBundler({
           plugins: [createEsbuildPlugin(config)],
         })
       );
+
       return config;
     },
     env: {
