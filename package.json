@@ -1,0 +1,32 @@
+{
+  "name": "cypresscucumberts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run --browser chrome",
+    "cy-run": "npx cypress run --headed",
+    "cy-open": "npx cypress open",
+    "genReport": "npx cypress run --browser chrome --env allure=true",
+    "openReport": "npx allure open allure-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+    "@faker-js/faker": "^9.6.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/e2e/[filepath]/**/*.{js,ts}",
+      "cypress/e2e/[filepath].{js,ts}",
+      "cypress/support/step_definitions/**/*.{js,ts}"
+    ]
+  },
+  "devDependencies": {
+    "allure-cypress": "^3.2.1",
+    "typescript": "^5.8.2"
+  }
+}
