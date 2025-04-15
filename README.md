@@ -9,11 +9,7 @@ https://docs.google.com/spreadsheets/d/1tS3XCV9NTeMYT2Q8NqY41bPv8zkPwb-NELOdAPnF
 
 ### Requirements
 
-Node.js,
-npm,
-Cypress,
-Cucumber
-Git
+Node v20.10.0
 
 ### Steps to install
 
@@ -37,20 +33,18 @@ Git
 
 2.  Run tests in headed mode:
 
-        npx cypress run --headed
+        npm cy-run
 
 3.  Open Cypress Launchpad:
 
-        npx cypress open
+        npm cy-open
 
 ### Generating Allure Report
 
-        npx cypress run --browser chrome --env allure=true
-
-        npx allure generate allure-results --clean -o allure-report
+        npm genReport
 
 Open report in browser:
 
-        npx allure open allure-report
+        npm openReport
 
 Reports also avaliable on GitHub pages https://mafka0903.github.io/CypressCucumberTS/

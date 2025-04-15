@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --browser chrome"
+    "test": "npx cypress run --browser chrome",
+    "cy-run": "npx cypress run --headed",
+    "cy-open": "npx cypress open",
+    "genReport": "npx cypress run --browser chrome --env allure=true",
+    "openReport": "npx allure open allure-report"
   },
   "keywords": [],
   "author": "",
